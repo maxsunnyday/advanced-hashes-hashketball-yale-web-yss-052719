@@ -131,7 +131,7 @@ def num_blocks(name)
   game_hash.each do |team, hash|
     hash[:players].each do |player, stats|
       if player == name
-          return stats[:blocks]
+        return stats[:blocks]
       end
     end
   end
