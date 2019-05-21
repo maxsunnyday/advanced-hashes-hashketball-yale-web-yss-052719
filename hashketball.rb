@@ -126,6 +126,18 @@ def num_points_scored(name)
   end
 end
 
+
+def num_blocks(name)
+  game_hash.each do |team, hash|
+    hash[:players].each do |player, stats|
+      if player == name
+          return stats[:blocks]
+      end
+    end
+  end
+end
+
+
 def team_colors(name)
   game_hash.each do |team, hash|
     if hash[:team_name] == name
