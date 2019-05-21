@@ -126,15 +126,19 @@ def num_points_scored(name)
   end
 end
 
-
-def num_blocks(name)
+def find_player(name)
   game_hash.each do |team, hash|
     hash[:players].each do |player, stats|
       if player == name
-        return stats[:blocks]
+        return stats
       end
     end
   end
+end
+
+
+def num_blocks(name)
+  find_player(name)[:blocks]
 end
 
 
